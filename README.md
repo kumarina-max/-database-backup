@@ -38,14 +38,13 @@ pg_restore -h host -p port -U user -d dbname -c backup.dump
 ### 3.1. Пример команды инкрементного резервного копирования MySQL
 
 Инкрементное резервное копирование в MySQL выполняется с помощью коммерческого инструмента MySQL Enterprise Backup (mysqlbackup). Базовая команда:
-
-''' bash
+``` bash
 mysqlbackup --backup-dir=/path/to/backup --incremental \
 --incremental-backup-dir=/path/to/incremental backup
 --incremental — указывает на создание инкрементной копии.
 
 --incremental-backup-dir — каталог для хранения инкрементного бэкапа.
-'''
+```
 
 Также требуется указать базу для сравнения через --incremental-base или --start-lsn.
 
